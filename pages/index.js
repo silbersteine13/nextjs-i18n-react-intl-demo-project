@@ -1,7 +1,26 @@
 import Head from 'next/head'
+import { IntlProvider, FormattedMessage } from 'react-intl';
+import Spanish from '../lang/es.json';
+import Arabic from '../lang/ar.json';
+import English from '../lang/en.json';
+
+const locale = typeof window !== 'undefined' ? navigator.language : 'en';
+let lang;
+
+if (locale === 'ar') {
+  lang = Arabic;
+} else {
+  if (locale === 'es') {
+    lang = Spanish;
+  } else {
+    lang = English;
+  }
+}
+
 
 export default function Home() {
   return (
+    <IntlProvider locale={locale} messages={English}>
     <div className="container">
       <Head>
         <title>Create Next App</title>
@@ -15,35 +34,9 @@ export default function Home() {
             Gitpod!
           </a>
         </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href="https://github.com/vercel/next.js/tree/master/examples" className="card">
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
+        <h1>
+           <FormattedMessage id="key1" defaultMessage="Welcome to our tutorial" /> 
+           </h1>
       </main>
 
       <footer>
@@ -55,6 +48,7 @@ export default function Home() {
           Powered by <img src="/vercel.svg" alt="Vercel" className="logo" />
         </a>
       </footer>
+      
 
       <style jsx>{`
         .container {
@@ -201,5 +195,6 @@ export default function Home() {
         }
       `}</style>
     </div>
+    </IntlProvider>
   )
 }
