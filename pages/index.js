@@ -3,7 +3,9 @@ import { IntlProvider, FormattedMessage } from 'react-intl';
 import Spanish from '../lang/es.json';
 import Arabic from '../lang/ar.json';
 import English from '../lang/en.json';
+import React, { useState } from 'react';
 
+const Context = React.createContext();
 const locale = typeof window !== 'undefined' ? navigator.language : 'en';
 let lang;
 
@@ -19,8 +21,25 @@ if (locale === 'ar') {
 
 
 export default function Home() {
+  const [locale, setLocale] = useState(lang);
+  const [messages, setMessages] = useState(lang);
+  function selectLanguage(e) {
+    const newLocale = e.target.value;
+    setLocale(newLocale);
+    if (newLocale === 'en') {
+      setMessages(English);
+    } else {
+      if (newLocale === 'es') {
+        setMessages(Spanish);
+      } else {
+        setMessages(Arabic);
+      }
+    }
+  }
+
   return (
-    <IntlProvider locale={locale} messages={English}>
+    <Context.Provider value={{ locale, selectLanguage }}>
+    <IntlProvider locale={locale} messages={messages}>
     <div className="container">
       <Head>
         <title>Create Next App</title>
@@ -35,8 +54,25 @@ export default function Home() {
           </a>
         </h1>
         <h1>
-           <FormattedMessage id="key1" defaultMessage="Welcome to our tutorial" /> 
-           </h1>
+           <FormattedMessage id="key1" defaultMessage="Welcome to our" /> 
+        </h1>
+        <h2>
+          <FormattedMessage id = "app.channel.plug" defaultMessage="Tutorial brought to you by {blogName}" values = {{blogName: "Lokalise"}} />
+        </h2>
+        <p>
+        <FormattedMessage
+   id = "app.header"
+   defaultMessage="Edit the files and save to reload"
+   values = {{fileName: 'src/App.js', code: (word)=> <code>{word}</code>}}
+/>
+        </p>
+        <p>
+        <select value={locale} onChange={selectLanguage}>
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="ar">Arabic</option>
+            </select>
+        </p>
       </main>
 
       <footer>
@@ -196,5 +232,6 @@ export default function Home() {
       `}</style>
     </div>
     </IntlProvider>
+    </Context.Provider>
   )
 }
