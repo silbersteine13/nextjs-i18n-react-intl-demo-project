@@ -1,19 +1,12 @@
-# A Nextjs starter template on Gitpod
+# Demo of Nextjs i18n using `react-intl` library
 
-This is a [Learn Next.js](https://nextjs.org/learn) template configured for ephemeral cloud development environments on [Gitpod](https://www.gitpod.io/).
+## Demo
+![nextjs-i18n-react-intl](https://user-images.githubusercontent.com/1124415/214509286-03c0dc12-71fa-4598-bc8e-d080cbf04ff2.gif)
 
-## Next Steps
+## Live demo
+https://nextjs-reactintl-i18n-demo.vercel.app/
 
-Click the button below to start a new development environment:
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/template-nextjs)
-
-## Get Started With Your Own Project
-
-### A new project
-
-Click the above "Open in Gitpod" button to start a new workspace. Once you're ready to push your first code changes, Gitpod will guide you to fork this project so you own it.
-
-### An existing project
-
-To get started with Next.js on Gitpod, add a [`.gitpod.yml`](./.gitpod.yml) file which contains the configuration to improve the developer experience on Gitpod. To learn more, please see the [Getting Started](https://www.gitpod.io/docs/getting-started) documentation.
+## Coding session
+https://youtu.be/gggJWEQ9kJg
+[![Nextjs internationalization (i18n) using react-intl](https://i3.ytimg.com/vi/gggJWEQ9kJg/maxresdefault.jpg)](https://www.youtube.com/watch?v=gggJWEQ9kJg "Next.js internationalization (i18n) using react-intl")
