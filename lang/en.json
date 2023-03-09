@@ -1,5 +1,5 @@
 {
-    "key1": "Welcome to our tutorial",
+    "key1": "Welcome to our new tutorial",
     "app.channel.plug": "Tutorial brought to you by {blogName}",
     "app.header" : "Edit <code>{fileName}</code> and save to reload"
 

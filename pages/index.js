@@ -2,23 +2,33 @@ import Head from 'next/head'
 import { IntlProvider, FormattedMessage } from 'react-intl';
 import Spanish from '../lang/es.json';
 import Arabic from '../lang/ar.json';
-import English from '../lang/en.json';
+// import English from '../lang/en.json'; //English will now be imported from S3 bucket
 import React, { useState } from 'react';
 
 const Context = React.createContext();
 const locale = typeof window !== 'undefined' ? navigator.language : 'en';
 let lang;
 
-if (locale === 'ar') {
-  lang = Arabic;
-} else {
-  if (locale === 'es') {
-    lang = Spanish;
-  } else {
-    lang = English;
-  }
-}
+(async () => {
+  const EnglishResponse = await fetch('https://eric-anil-cdn.s3.us-east-2.amazonaws.com/en+(1).json')
+  // .then(response => response.json())
+  const English = await EnglishResponse.json()
+  // const Spanish = await fetch('https://eric-anil-cdn.s3.us-east-2.amazonaws.com/es.json')
+  // .then(response => response.json())
+  // const Arabic = await fetch('https://eric-anil-cdn.s3.us-east-2.amazonaws.com/ar.json')
+  // .then(response => response.json())
 
+  if (locale === 'ar') {
+    lang = Arabic;
+  } else {
+    if (locale === 'es') {
+      lang = Spanish;
+    } else {
+      lang = English;
+    }
+  }
+})();
+  
 
 export default function Home() {
   const [locale, setLocale] = useState(lang);
@@ -54,7 +64,7 @@ export default function Home() {
           </a>
         </h1>
         <h1>
-           <FormattedMessage id="key1" defaultMessage="Welcome to our" /> 
+           <FormattedMessage id="key1" defaultMessage="Hello world" /> 
         </h1>
         <h2>
           <FormattedMessage id = "app.channel.plug" defaultMessage="Tutorial brought to you by {blogName}" values = {{blogName: "Lokalise"}} />
