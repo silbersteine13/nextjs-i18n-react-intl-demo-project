@@ -1,0 +1,5 @@
+{
+    "key1": "Bienvenido a nuestro tutorial",
+    "app.channel.plug": "Tutorial presentado por {blogName} y Eric\/Anil.",
+    "app.header": "Edite <code> {fileName} <\/code> y guarde para recargar la página."
+}

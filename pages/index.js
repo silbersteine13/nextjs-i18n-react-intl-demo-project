@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { IntlProvider, FormattedMessage } from 'react-intl';
-import Spanish from '../lang/es.json';
-import Arabic from '../lang/ar.json';
-// import English from '../lang/en.json'; //English will now be imported from S3 bucket
+import Spanish from 'https://eric-anil-cdn.s3.us-east-2.amazonaws.com/es.json';
+import Arabic from 'https://eric-anil-cdn.s3.us-east-2.amazonaws.com/ar.json';
+import English from 'https://eric-anil-cdn.s3.us-east-2.amazonaws.com/en.json';
 import React, { useState } from 'react';
 
 const Context = React.createContext();
@@ -10,13 +10,12 @@ const locale = typeof window !== 'undefined' ? navigator.language : 'en';
 let lang;
 
 (async () => {
-  const EnglishResponse = await fetch('https://eric-anil-cdn.s3.us-east-2.amazonaws.com/en+(1).json')
-  // .then(response => response.json())
-  const English = await EnglishResponse.json()
-  // const Spanish = await fetch('https://eric-anil-cdn.s3.us-east-2.amazonaws.com/es.json')
-  // .then(response => response.json())
-  // const Arabic = await fetch('https://eric-anil-cdn.s3.us-east-2.amazonaws.com/ar.json')
-  // .then(response => response.json())
+  const English = await fetch('https://eric-anil-cdn.s3.us-east-2.amazonaws.com/en.json')
+  .then(response => response.json())
+  const Spanish = await fetch('https://eric-anil-cdn.s3.us-east-2.amazonaws.com/es.json')
+  .then(response => response.json())
+  const Arabic = await fetch('https://eric-anil-cdn.s3.us-east-2.amazonaws.com/ar.json')
+  .then(response => response.json())
 
   if (locale === 'ar') {
     lang = Arabic;
