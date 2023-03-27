@@ -1,5 +1,5 @@
 {
-    "key1": "Welcome to our tutorial",
-    "app.channel.plug": "Tutorial brought to you by {blogName} and Eric\/Anil.",
-    "app.header": "Edit <code>{fileName}<\/code> and save to reload the page."
+    "key1": "Welcome to our tutorial for Lokalise and S3.",
+    "app.channel.plug": "Tutorial brought to you by the {blogName} team.",
+    "app.header": "Edit <code>{fileName}<\/code> and save to reload the page immediately."
 }

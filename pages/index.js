@@ -19,13 +19,11 @@ let lang;
 
   if (locale === 'ar') {
     lang = Arabic;
-  } else {
-    if (locale === 'es') {
+    } else if (locale === 'es') {
       lang = Spanish;
     } else {
       lang = English;
     }
-  }
 })();
   
 

@@ -1,5 +1,5 @@
 {
-    "key1": "مرحبا بكم في برنامجنا التعليمي",
-    "app.channel.plug": "برنامج تعليمي يقدمه لك {blogName} و Eric \/ Anil.",
-    "app.header": "قم بتحرير <code> {fileName} <\/code> وحفظه لإعادة تحميل الصفحة."
+    "key1": "مرحبًا بك في البرنامج التعليمي الخاص بنا لـ Lokalise و S3.",
+    "app.channel.plug": "برنامج تعليمي يقدمه لك فريق {blogName} .",
+    "app.header": "قم بتحرير <code> {fileName} <\/code> وحفظه لإعادة تحميل الصفحة على الفور."
 }

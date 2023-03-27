@@ -1,6 +1,6 @@
 {
-  "https://eric-anil-cdn.s3.us-east-2.amazonaws.com/ar.json": { "integrity": "sha512-ZxHXFqnN8D7kEU3/LmPxPIHb66yfrLjDcowcTAOH1ZSHF8kOGC0DiSreCcg3AFWkahFIV6CeW+sXq8Wg45wajg==", "contentType": "application/json" },
-  "https://eric-anil-cdn.s3.us-east-2.amazonaws.com/en.json": { "integrity": "sha512-/lxgZxasyTJ8InG8wsHP/EsTqaeIYpQRhlsQeDoZJA8F2esJ666dQGiN6vnvzMz26whK+sWriu9qQdv5+Q5CfA==", "contentType": "application/json" },
-  "https://eric-anil-cdn.s3.us-east-2.amazonaws.com/es.json": { "integrity": "sha512-2AhMut85qtEKn8aEnBo7JVWMOe7uMINE2N9ugDDV9IAbJc1nZhc5EW8hAdpzsOO6PtHFWKy1GRfY/K0I8YdOhQ==", "contentType": "application/json" },
+  "https://eric-anil-cdn.s3.us-east-2.amazonaws.com/ar.json": { "integrity": "sha512-JWBifxlxHUZR/WmnCjvYlPGkrPEfQB8Vp5nOEhs+seF8NaO+gnwyWVb7YLnv3xQSljSMHvRnoYxE8HXlzxrSig==", "contentType": "application/json" },
+  "https://eric-anil-cdn.s3.us-east-2.amazonaws.com/en.json": { "integrity": "sha512-ri+KLsK4dpKc/as3PW0gnwmLTUfg4W+lobN66wdDF7SSImi7SMLiFcVnA+NHLyD+c1ukpj+y5SLC5zdShpzOIg==", "contentType": "application/json" },
+  "https://eric-anil-cdn.s3.us-east-2.amazonaws.com/es.json": { "integrity": "sha512-C5odYTGkS412R0cgHy9O5ke1IhAz3c1IcmXMUS/tkkCgvJgX4XmZcnjfgeXsBMPA4fGHq74TCNNzIzd0BoCwSw==", "contentType": "application/json" },
   "version": 1
 }
