@@ -62,7 +62,7 @@ export default function Home() {
         <p>
         <FormattedMessage
    id = "app.header"
-   defaultMessage="Edit the files and save to reload"
+   defaultMessage="Edit <code>{fileName}</code> and save to reload"
    values = {{fileName: 'src/App.js', code: (word)=> <code>{word}</code>}}
 />
         </p>

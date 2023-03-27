@@ -1,3 +1,5 @@
 {
-    
+    "key1": "Arabic Welcome to our tutorial",
+    "app.channel.plug": "Arabic Tutorial brought to you by {blogName}",
+    "app.header" : "Arabic Edit <code>{fileName}</code> and save to reload"
 }
