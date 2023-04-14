@@ -1,0 +1,8 @@
+{
+  "https://s3lokalisedemo.s3.us-east-2.amazonaws.com/ar.json": { "integrity": "sha512-NcEsvNlKR+m+4LIXWvbs2z+Ohk0qWpc+zybsO0KfEgr7cQfjwQzbdRXmBGCm3ZtTjfOsNstMj87zMgbot45lBA==", "contentType": "application/json" },
+  "https://s3lokalisedemo.s3.us-east-2.amazonaws.com/de_DE.json": { "integrity": "sha512-nJ1qrqSPfnH7giRZVvloSPVdOJgq/UiSVdL8lbJkev7GCkp4Uli7mvMsMUXh+Qz1+BwgXDv8y3w5SaFbwRhSnw==", "contentType": "application/json" },
+  "https://s3lokalisedemo.s3.us-east-2.amazonaws.com/en.json": { "integrity": "sha512-qTb3l5IcWre5fs+1i9TcpckPERfjay/d6FOc2iyK3ZEKs0exCmsvPe65AO+ZU3xOCmpWWSEqiWRm6b490HRkKQ==", "contentType": "application/json" },
+  "https://s3lokalisedemo.s3.us-east-2.amazonaws.com/es.json": { "integrity": "sha512-qp6cawSUpOjy8ZedhhFoCrGY0l+VzHhX1FgjbpSI7cW/Kd3+uAms2xb94FnRvfLB7dZvcydu2e1y2VTbp1fziA==", "contentType": "application/json" },
+  "https://s3lokalisedemo.s3.us-east-2.amazonaws.com/sw.json": { "integrity": "sha512-v3hOwU2usMYg8vzHTQpBej2aASUbPEBWp4VHTvw6l7n0+bh1xib/wU1PO7oPISBgcKZ7ifFoxIE4fuyxNyjSoA==", "contentType": "application/json" },
+  "version": 1
+}

@@ -1,24 +1,41 @@
 import Head from 'next/head'
 import { IntlProvider, FormattedMessage } from 'react-intl';
-import Spanish from '../lang/es.json';
-import Arabic from '../lang/ar.json';
-import English from '../lang/en.json';
+import German from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/de_DE.json';
+import Swahili from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/sw.json';
+import Spanish from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/es.json';
+import Arabic from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/ar.json';
+import English from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/en.json';
 import React, { useState } from 'react';
 
 const Context = React.createContext();
 const locale = typeof window !== 'undefined' ? navigator.language : 'en';
 let lang;
 
-if (locale === 'ar') {
-  lang = Arabic;
-} else {
-  if (locale === 'es') {
-    lang = Spanish;
-  } else {
-    lang = English;
-  }
-}
+(async () => {
+  const EnglishResponse = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/en.json')
+  .then(response => response.json())
+  const English = await EnglishResponse.json()
+  const Spanish = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/es.json')
+  .then(response => response.json())
+  const Arabic = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/ar.json')
+  .then(response => response.json())
+  const Swahili = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/sw.json')
+  .then(response => response.json())
+  const German = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/de_DE.json')
+  .then(response => response.json())
 
+  if (locale === 'ar') {
+    lang = Arabic;
+  } else if (locale === 'sw') {
+    lang = Swahili;
+  } else if (locale === 'es') {
+      lang = Spanish;
+  } else if (locale === 'de') {
+    lang = German;
+    } else {
+      lang = English;
+    }
+})
 
 export default function Home() {
   const [locale, setLocale] = useState(lang);
@@ -26,16 +43,19 @@ export default function Home() {
   function selectLanguage(e) {
     const newLocale = e.target.value;
     setLocale(newLocale);
-    if (newLocale === 'en') {
-      setMessages(English);
-    } else {
-      if (newLocale === 'es') {
-        setMessages(Spanish);
+
+    if (newLocale === 'ar') {
+      setMessages(Arabic);
+    } else if (newLocale === 'sw') {
+      setMessages(Swahili);
+    } else if (newLocale === 'es') {
+      setMessages(Spanish);
+    } else if (newLocale === 'de') {
+      setMessages(German);
       } else {
-        setMessages(Arabic);
+        setMessages(English)
       }
-    }
-  }
+}
 
   return (
     <Context.Provider value={{ locale, selectLanguage }}>
@@ -71,6 +91,8 @@ export default function Home() {
               <option value="en">English</option>
               <option value="es">Spanish</option>
               <option value="ar">Arabic</option>
+              <option value="sw">Swahili</option>
+              <option value="de">German</option>
             </select>
         </p>
       </main>
