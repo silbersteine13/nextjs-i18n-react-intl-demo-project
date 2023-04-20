@@ -1,16 +1,47 @@
 import Head from 'next/head'
 import { IntlProvider, FormattedMessage } from 'react-intl';
-import German from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/de_DE.json';
-import Swahili from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/sw.json';
-import Spanish from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/es.json';
-import Arabic from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/ar.json';
-import English from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/en.json';
+//import German from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/de_DE.json';
+//import Swahili from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/sw.json';
+//import Spanish from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/es.json';
+//import Arabic from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/ar.json';
+//import English from 'https://s3lokalisedemo.s3.us-east-2.amazonaws.com/en.json';
 import React, { useState } from 'react';
+
 
 const Context = React.createContext();
 const locale = typeof window !== 'undefined' ? navigator.language : 'en';
 let lang;
 
+//This is called upon request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const English = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/en.json')
+  .then(response => response.json())
+  const Spanish = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/es.json')
+  .then(response => response.json())
+  const Arabic = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/ar.json')
+  .then(response => response.json())
+  const Swahili = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/sw.json')
+  .then(response => response.json())
+  const German = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/de_DE.json')
+  .then(response => response.json())
+
+  if (locale === 'ar') {
+    lang = Arabic;
+  } else if (locale === 'sw') {
+    lang = Swahili;
+  } else if (locale === 'es') {
+      lang = Spanish;
+  } else if (locale === 'de') {
+    lang = German;
+    } else {
+      lang = English;
+    }
+
+  // Pass data to the page via props
+  return { props: { English, Spanish, Arabic, Swahili, German, lang } }
+}
+/*
 (async () => {
   const EnglishResponse = await fetch('https://s3lokalisedemo.s3.us-east-2.amazonaws.com/en.json')
   .then(response => response.json())
@@ -36,8 +67,8 @@ let lang;
       lang = English;
     }
 })
-
-export default function Home() {
+*/
+export default function Home({English, Spanish, Arabic, Swahili, German, lang}) {
   const [locale, setLocale] = useState(lang);
   const [messages, setMessages] = useState(lang);
   function selectLanguage(e) {
